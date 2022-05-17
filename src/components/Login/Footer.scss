@@ -1,0 +1,63 @@
+.footer-last {
+    padding-left: 71px;
+  
+  & .ver {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    color: #fff;
+    font-weight: 20;
+    font-size: 15px;
+    font-family: "Inter",sans-serif!important;
+    font-style: italic;
+    font-feature-settings: normal,;
+    font-variant: normal;
+  }
+  & .hotline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    padding-left: -10%;
+    padding: 1rem;
+    background: #4c86b0;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+    position: absolute;
+    cursor: pointer;
+
+    & img {
+        transform: scale(1.8)
+    }
+  }
+  & .phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #fff;
+    font-size: 20px;
+    transition: .5s;
+    height: 35px;
+    font-family: "Roboto";
+    border-radius: 0 10px 10px 0;
+    font-weight: 700;
+    font-style: normal;
+    padding-left: 51px;
+    
+  }
+
+}
+.hotline-total {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    background: #3b5766;
+    border-radius: 0 10px 10px 0;
+    position: absolute;
+    bottom: 3%;
+    left: 3%;
+}

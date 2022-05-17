@@ -1,0 +1,389 @@
+.login-form-spound {
+    width: auto;
+    height: 500px;
+}
+
+.padding20 {
+    padding-top: 17px;
+
+}
+
+.display-login-none {
+    display: none;
+}
+
+.invalid {
+    font-size: 16px;
+    color: rgb(143,32,32);
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 0;
+}
+
+.closeColorRed:hover {
+    color:rgb(224, 89, 89);
+    cursor: pointer;
+}
+
+.handle-japan {
+    width: 113px;
+    height: 33px;
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+}
+
+.dropdownLanguage {
+    width: 149px;
+    height: 98px;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(8 8 8 / 21%);
+    transition: .5s;
+    align-items: center;
+
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+
+    & img {
+        width: 40px;
+        object-fit: cover;
+        cursor: pointer;
+    }
+}
+
+.border-vietnamese {
+    border-bottom: 1px solid hsla(0, 0%, 43.1%, .2549019607843137);
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+
+}
+
+#lang-padding {
+    width: 100%;
+    height: 50%;
+    padding: 6px;
+
+}
+
+#lang-padding:hover {
+    background-color: #3e5c766c;
+    cursor: pointer;
+}
+
+.logo-info{
+    position: absolute;
+    top: 13%;
+    left: 3%;
+    cursor: pointer;
+}
+// .container {
+//     position: absolute;
+//     top: 45px;
+//     left: -3%;
+//     /* z-index: 2; */
+//     display: flex;
+//     grid-gap: 10px;
+//     gap: 10px;
+//     align-items: center;
+//     height: 100px;
+//     color: #fff;
+//     font-size: 40px;
+//     font-family: "Roboto",sans-serif;
+// }
+
+.header-container {
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-bottom: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    & .logo-info {
+        display: flex;
+        align-items: center;
+        gap: 10px
+    }
+
+    & .slogan-text h1 {
+        color: white;
+        font-weight: 700;
+        font-family: "Roboto", sans-serif;
+        font-size: 40px;
+        margin-bottom: 0;
+    }
+
+    & .language {
+
+        padding-right: 2%;
+        position: absolute;
+        right: 3px;
+        top: 7%;
+    }
+}
+
+.login-f-form {
+    // position: absolute;
+    // transform: translateX(100%);
+}
+.img-hoaky {
+    width: 40px;
+}
+
+.login-f form {
+    width: 416px;
+    max-height: 495px;
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 6px rgb(0 0 0 / 12%);
+    //padding-bottom: 92px;
+    //padding-top: 105px;
+}
+
+.login-f {
+    & .l-head {
+        font-weight: 700;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        padding-bottom: 18px;
+    }
+
+    & .l-user,
+    .l-pass,
+    .l-select {
+        color: #3e5c76;
+        font-weight: 400;
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+        opacity: .7;
+
+
+    }
+
+
+    & .input-component {
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        padding-right: 2rem;
+        padding-left: 2%;
+        background: #fff;
+        border-radius: 10px;
+        outline: none;
+        transition: box-shadow .5s;
+        transition: .3s;
+        position: relative;
+        border: 1px solid black;
+        font-size: 16px;
+
+
+    }
+
+    & .dropDown-component {
+        width: 100%;
+        height: 50px;
+        padding-right: 2rem;
+        padding-left: 2%;
+        background: #fff;
+        border-radius: 10px;
+        outline: none;
+        transition: box-shadow .5s;
+        transition: .3s;
+    }
+
+
+
+    & img {
+        width: 17px;
+        height: 16px;
+        position: absolute;
+        right: 10px;
+        top: 33px;
+    }
+
+    & .d-flex {
+        gap: 5px;
+    }
+
+    & input[type=checkbox] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        background-color: #fff;
+        border: 1px solid #748cab;
+        border-radius: 3px;
+      
+    }
+
+    & input:hover {
+        border: 1px solid rgba(32, 135, 204, 0.808);
+    }
+
+    & input:focus {
+        border-radius: 8px;
+        border: 1px solid rgba(32, 135, 204, 0.808);
+        box-shadow: 0 0 5px #719ece;
+        color: rgb(38, 38, 38);
+        font-size: 16px;
+        line-height: 1.71;
+        font-weight: 400;
+        font-stretch: normal;
+        letter-spacing: normal;
+     
+    }
+
+    .dropDown-items-custom {
+        width: 100%;
+        height: 100%;
+        padding-right: 2rem;
+        border: 1px solid #7ab9ca;
+        border-radius: 10px;
+        border-radius: 8px;
+        padding-right: 0;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    .dropDown-items {
+        width: 100%;
+        color: rgba(8, 12, 15, .9647058823529412);
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 1.71;
+        font-weight: 400;
+        font-stretch: normal;
+        letter-spacing: normal;
+        padding: 20px;
+        position: relative;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .dropDown-items:hover {
+        background-color: #037AFF;
+        cursor: pointer;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+
+    & button {
+        position: relative;
+        width: 200px;
+        height: 50px;
+        margin-top: 5%;
+        color: #fff;
+        font-weight: 900;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        background: #3e5c76;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+        transition: .2s;
+    }
+
+    & button:hover {
+        background: rgba(62,92,118,.8);
+    }
+
+
+}
+
+.align-items-center {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(62, 92, 118);
+    border-radius: 10px 10px 0px 0px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    padding-right: 2rem;
+    padding-left: 2%;
+    background: #fff;
+    border-radius: 10px;
+    outline: none;
+    transition: box-shadow .5s;
+    transition: .3s;
+    color: rgba(8, 12, 15, .9647058823529412);
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+.pass-input {
+    width: 100%;
+}
+
+.pass-input img {
+    cursor: pointer;
+}
+
+.language {
+    cursor: pointer;
+}
+
+#select-location {
+    position: relative;
+}
+
+.dropdown-location-img {
+    position: absolute !important;
+    top: 15px !important;
+    right: 10px !important;
+}
+
+// @media screen and (max-width: 1200px) {
+//     .login-f-form {
+//         position: fixed;
+//         transform: translateX(0);
+//     }
+// }
+// @media screen and (max-width: 992px) {
+//     .login-f-form {
+//         position: fixed;
+//         transform: translateX(0);
+//     }
+// }
+// @media screen and (max-width: 768px) {
+//     .login-f-form {
+//         position: fixed;
+//         transform: translateX(0);
+//     }
+// }
+// @media screen and (max-width: 576px) {
+//     .login-f-form {
+//         position: fixed;
+//         transform: translateX(0);
+//     }
+// }
+
+
+
+.loading-img img{
+    animation: spinner 1s infinite ease-in;
+    width: 90% !important;
+    height: 90% !important;
+    position: absolute !important;
+    top: 8%;
+}
+@keyframes spinner {
+    to {
+        transform: rotate(360deg)
+    }
+}
