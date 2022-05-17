@@ -1,9 +1,10 @@
 
 import React from 'react'
-import { Row, Col, message } from "antd";
+import { Row, Col, message, Tabs, Table, Tag, Space } from "antd";
+
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import 'antd/dist/antd.min.css';
 import "./Home.scss"
 
 
@@ -18,17 +19,110 @@ import bell from "../../images/bell.svg";
 import user from "../../images/user.svg";
 import drop from "../../images/drop.svg";
 import hoaky from "../../images/hoaky.svg";
+import setting from "../../images/setting.svg";
+import back from "../../images/back.svg";
+import create from "../../images/create.svg";
+import excel from "../../images/excel.svg";
 import vietnam from "../../images/vietnam.svg";
 import japan from "../../images/Japan.svg";
-
+import morning from "../../images/morning.svg";
 
 
 function Home() {
 
+  const { TabPane } = Tabs;
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      render: text => <a>{text}</a>,
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Tags',
+      key: 'tags',
+      dataIndex: 'tags',
+      render: tags => (
+        <>
+          {tags.map(tag => {
+            let color = tag.length > 5 ? 'geekblue' : 'green';
+            if (tag === 'loser') {
+              color = 'volcano';
+            }
+            return (
+              <Tag color={color} key={tag}>
+                {tag.toUpperCase()}
+              </Tag>
+            );
+          })}
+        </>
+      ),
+    },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (text, record) => (
+        <Space size="middle">
+          <a>Invite {record.name}</a>
+          <a>Delete</a>
+        </Space>
+      ),
+    },
+  ];
+
+  const data = [
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+      tags: ['nice', 'developer'],
+    },
+    {
+      key: '2',
+      name: 'Jim Green',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+      tags: ['loser'],
+    },
+    {
+      key: '3',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sidney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+  ];
+
+
+
+  function callback(key) {
+    console.log(key);
+  }
 
   return (
     <div>
       <Row className="Header-component">
+
+        <div className="clock undefined">
+          <div>
+            <img src={morning} alt=""></img>
+            <div>10:51</div>
+          </div>
+          <div>
+          15-4-2022
+          </div>
+        </div>
         <Col span={24} className="module-head-form">
           {/* logo */}
           <Col className="module-head">
@@ -43,14 +137,18 @@ function Home() {
             </a>
             <a className="onSelect" href='#'>
               <img src={list} alt=""></img>
-              HOUSEKEEPING
+              RESERVATION
             </a>
             <a className="onSelect" href='#'>
               <img src={clear} alt=""></img>
-              MANAGE
+              HOUSEKEEPING
             </a>
             <a className="onSelect" href='#'>
               <img src={manage} alt=""></img>
+              MANAGE
+            </a>
+            <a className="onSelect" href='#'>
+              <img src={setting} alt=""></img>
               SETTING
             </a>
 
@@ -62,7 +160,7 @@ function Home() {
             </div>
           </Col>
 
-          <Col className="module-head">
+          <Col className="module-head right-nav">
             <div>
               <img src={bell} alt="" ></img>
             </div>
@@ -78,12 +176,47 @@ function Home() {
             {/* phan xy ly ngon ngu */}
             <div className="lang lang-moudle">
               <img src={hoaky} alt=""></img>
-              </div>
+            </div>
 
 
           </Col>
         </Col>
       </Row>
+
+      <Row className="setting-header-container d-flex align-items-center1">
+        <img src={back} alt=""></img>
+        <span className="room-define">Room Define</span>
+      </Row>
+
+      <div className="setting-children">
+        <div className="room-define-container">
+
+          <Tabs defaultActiveKey="1" onChange={callback} size="large">
+            <TabPane tab="Room" key="1">
+              Content of Tab Pane 1
+            </TabPane>
+            <TabPane tab="Room Type" key="2">
+              Content of Tab Pane 2
+            </TabPane>
+            <TabPane tab="Room Kind" key="3">
+              <div className="room-kind-container">
+                <Row>
+                  <Col span="24" className="mb-3">
+                      <button className='undefined buttonList d-flex justify-content-center align-items-center'>
+                        <img src={create} alt=""></img>
+                        <span className='add'>Add</span>
+                      </button>
+                  </Col>
+                  <Col span="24">
+                  <Table columns={columns} dataSource={data} />
+                  </Col>
+                </Row>
+              </div>
+            </TabPane>
+          </Tabs>
+
+        </div>
+      </div>
 
     </div>
   )
