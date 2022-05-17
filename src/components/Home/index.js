@@ -11,7 +11,7 @@ import "./Home.scss"
 // import image
 import logo from "../../images/logo.png";
 import camera from "../../images/camera.svg";
-import list from "../../images/list.svg";
+import List from "../../images/list.js";
 import clear from "../../images/clean.svg";
 import manage from "../../images/manage.svg";
 import bacham from "../../images/bacham.svg";
@@ -120,34 +120,34 @@ function Home() {
             <div>10:51</div>
           </div>
           <div>
-          15-4-2022
+            15-4-2022
           </div>
         </div>
         <Col span={24} className="module-head-form">
           {/* logo */}
-          <Col className="module-head">
+          <Col  xs={8} sm={5} lg={5} xl={2} xxl={3} className="module-head">
             <div className="Logo1 cursor-pointer module-logo">
               <img src={logo} alt=""></img>
             </div>
           </Col>
           <Col className="module-head module-group">
-            <a className="onSelect" href='#'>
+            <a  href='#'>
               <img src={camera} alt=""></img>
               RECEPTION
             </a>
             <a className="onSelect" href='#'>
-              <img src={list} alt=""></img>
+              <List />
               RESERVATION
             </a>
             <a className="onSelect" href='#'>
               <img src={clear} alt=""></img>
               HOUSEKEEPING
             </a>
-            <a className="onSelect" href='#'>
+            <a href='#'>
               <img src={manage} alt=""></img>
               MANAGE
             </a>
-            <a className="onSelect" href='#'>
+            <a href='#'>
               <img src={setting} alt=""></img>
               SETTING
             </a>
@@ -202,13 +202,13 @@ function Home() {
               <div className="room-kind-container">
                 <Row>
                   <Col span="24" className="mb-3">
-                      <button className='undefined buttonList d-flex justify-content-center align-items-center'>
-                        <img src={create} alt=""></img>
-                        <span className='add'>Add</span>
-                      </button>
+                    <button className='undefined buttonList d-flex justify-content-center align-items-center'>
+                      <img src={create} alt=""></img>
+                      <span className='add'>Add</span>
+                    </button>
                   </Col>
                   <Col span="24">
-                  <Table columns={columns} dataSource={data} />
+                    <Table columns={columns} dataSource={data} />
                   </Col>
                 </Row>
               </div>
