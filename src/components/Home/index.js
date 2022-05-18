@@ -428,6 +428,7 @@ function Home() {
                       columns={columnsRoomKind}
                       dataSource={dataRoomKind}
                       rowKey={record => record.ma}
+                      
                     />
                     
                   </Col>
