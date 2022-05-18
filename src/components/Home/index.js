@@ -27,10 +27,40 @@ import vietnam from "../../images/vietnam.svg";
 import japan from "../../images/Japan.svg";
 import morning from "../../images/morning.svg";
 import deleteIcon from "../../images/delete.svg";
+import { useAPI } from '../API/useAPI';
 
 
 
 function Home() {
+
+
+  // get API room kind 
+  const [dataRoomKind, setdataRoomKind] = useState([]);
+  
+  // loading
+  const [loading, setloading] = useState(false);
+
+  console.log(dataRoomKind);
+
+  const getDataRoomKindSuccess = (res) => {
+    // console.log(res);
+    setdataRoomKind(res)
+
+  }
+  const getDataRoomKindError = (res) => {
+
+  }
+  useEffect(() => {
+
+    useAPI(
+      "/api/Defines/GetRoomKind",
+      "get",
+      "application/json",
+      null
+      ,
+      getDataRoomKindSuccess,
+      getDataRoomKindError)
+  }, [])
 
   const { TabPane } = Tabs;
   // handle when click Dihotel
@@ -38,17 +68,19 @@ function Home() {
   // handle when click lang
   const [CheckDropdownLang, setCheckDropdownLang] = useState(false);
 
-  const columns = [
+
+
+  const columnsRoomKind = [
     {
       title: 'Room Kind',
-      dataIndex: 'name',
-      key: 'name',
+      dataIndex: 'dangPhong',
+      key: 'dangPhong',
       render: text => <a>{text}</a>,
     },
     {
       title: 'Adult',
-      dataIndex: 'age',
-      key: 'age',
+      dataIndex: 'soNguoi',
+      key: 'soNguoi',
     },
 
     {
@@ -213,7 +245,7 @@ function Home() {
   }
 
   function callback(key) {
-    console.log(key);
+    //console.log(key);
   }
 
   return (
@@ -381,6 +413,7 @@ function Home() {
                 </Row>
               </div>
             </TabPane>
+            {/* get API room kind */}
             <TabPane tab="Room Kind" key="3">
               <div className="room-kind-container">
                 <Row>
@@ -391,7 +424,12 @@ function Home() {
                     </button>
                   </Col>
                   <Col span="24">
-                    <Table columns={columns} dataSource={data} />
+                    <Table
+                      columns={columnsRoomKind}
+                      dataSource={dataRoomKind}
+                      rowKey={record => record.ma}
+                    />
+                    
                   </Col>
                 </Row>
               </div>

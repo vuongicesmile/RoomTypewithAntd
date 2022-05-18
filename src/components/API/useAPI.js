@@ -1,4 +1,4 @@
-export function getAPI(
+export function useAPI(
     url,
     method,
     contentType,

@@ -15,7 +15,7 @@ import japan from "../../images/Japan.svg";
 import closeEyes from "../../images/closeEyes.svg";
 import phone from "../../images/phone.svg";
 import dropdown from "../../images/dropdow.svg";
-import { getAPI } from "../API/fetchAPI";
+import { getAPI } from "../API/useAPI";
 import { Content } from "antd/lib/layout/layout";
 
 import success from "../../images/success.svg";
@@ -150,7 +150,7 @@ function Login() {
 
     setloadingImg(!loadingImg)
 
-    getAPI(
+    useAPI(
       "/api/User/getCurrentUser",
       "post",
       "application/json",
