@@ -28,74 +28,19 @@ import japan from "../../images/Japan.svg";
 import morning from "../../images/morning.svg";
 import deleteIcon from "../../images/delete.svg";
 import { useAPI } from '../API/useAPI';
+import RoomKind from '../RoomKind/RoomKind';
+import RoomType from '../RoomType';
 
 
 
 function Home() {
 
-
-  // get API room kind 
-  const [dataRoomKind, setdataRoomKind] = useState([]);
-  
-  // loading
-  const [loading, setloading] = useState(false);
-
-  console.log(dataRoomKind);
-
-  const getDataRoomKindSuccess = (res) => {
-    // console.log(res);
-    setdataRoomKind(res)
-
-  }
-  const getDataRoomKindError = (res) => {
-
-  }
-  useEffect(() => {
-
-    useAPI(
-      "/api/Defines/GetRoomKind",
-      "get",
-      "application/json",
-      null
-      ,
-      getDataRoomKindSuccess,
-      getDataRoomKindError)
-  }, [])
-
+ 
   const { TabPane } = Tabs;
   // handle when click Dihotel
   const [CheckDropdownDiHotel, setCheckDropdownDiHotel] = useState(false);
   // handle when click lang
   const [CheckDropdownLang, setCheckDropdownLang] = useState(false);
-
-
-
-  const columnsRoomKind = [
-    {
-      title: 'Room Kind',
-      dataIndex: 'dangPhong',
-      key: 'dangPhong',
-      render: text => <a>{text}</a>,
-    },
-    {
-      title: 'Adult',
-      dataIndex: 'soNguoi',
-      key: 'soNguoi',
-    },
-
-    {
-      title: 'Action',
-      key: 'action',
-      render: () => (
-        <button
-          className="undefined buttonList d-flex justify-content-center align-items-center1"
-        >
-          <img src={deleteIcon} alt=""></img>
-          <span className="delete-icon">Delete</span>
-        </button>
-      ),
-    },
-  ];
 
   const data = [
     {
@@ -121,44 +66,7 @@ function Home() {
     },
   ];
 
-  const columns2 = [
-    {
-      title: 'Room type',
-      dataIndex: 'address',
-      key: 'address',
-      render: text => <a>{text}</a>,
-    },
-    {
-      title: 'Short Name',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Day Use',
-      key: 'shortname',
-      render: () => (
-        <Switch defaultChecked onChange={onChange} />
-      )
-    },
-    {
-      title: 'Group',
-      dataIndex: 'name',
-      key: 'name',
-    },
 
-    {
-      title: 'Action',
-      key: 'action',
-      render: () => (
-        <button
-          className="undefined buttonList d-flex justify-content-center align-items-center1"
-        >
-          <img src={deleteIcon} alt=""></img>
-          <span className="delete-icon">Delete</span>
-        </button>
-      ),
-    },
-  ];
   const columns3 = [
     {
       title: 'Room',
@@ -242,11 +150,12 @@ function Home() {
 
   function onChange(checked) {
     console.log(`switch to ${checked}`);
-  }
+}
 
   function callback(key) {
     //console.log(key);
   }
+
 
   return (
     <div>
@@ -398,42 +307,13 @@ function Home() {
                 </Row>
               </div>
             </TabPane>
+            {/* get API room type */}
             <TabPane tab="Room Type" key="2">
-              <div className="room-kind-container">
-                <Row>
-                  <Col span="24" className="mb-3">
-                    <button className='undefined buttonList d-flex justify-content-center align-items-center1'>
-                      <img src={create} alt=""></img>
-                      <span className='add'>Add</span>
-                    </button>
-                  </Col>
-                  <Col span="24">
-                    <Table columns={columns2} dataSource={data} />
-                  </Col>
-                </Row>
-              </div>
+              <RoomType />
             </TabPane>
             {/* get API room kind */}
             <TabPane tab="Room Kind" key="3">
-              <div className="room-kind-container">
-                <Row>
-                  <Col span="24" className="mb-3">
-                    <button className='undefined buttonList d-flex justify-content-center align-items-center1'>
-                      <img src={create} alt=""></img>
-                      <span className='add'>Add</span>
-                    </button>
-                  </Col>
-                  <Col span="24">
-                    <Table
-                      columns={columnsRoomKind}
-                      dataSource={dataRoomKind}
-                      rowKey={record => record.ma}
-                      
-                    />
-                    
-                  </Col>
-                </Row>
-              </div>
+              <RoomKind />
             </TabPane>
           </Tabs>
 
