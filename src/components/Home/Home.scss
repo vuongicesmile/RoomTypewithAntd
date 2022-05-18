@@ -16,6 +16,15 @@
     border: 1px solid rgb(143, 32, 32);
 }
 
+.delete-icon {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: normal;
+}
+.buttonList {
+    padding: 1px 6px;
+}
 
 .custom-content {
     padding: 10px 20px;
@@ -72,6 +81,10 @@ svg {
         padding-right: 10px;
         padding-left: 10px;
         cursor: pointer;
+
+        &:hover {
+            background: rgba(75, 102, 72, .37);
+        }
     }
 
     & .onSelect {
@@ -102,10 +115,18 @@ svg {
 
     }
 
+    & .lang-moudle {
+        position: relative;
+        margin-right: 10px;
+    }
+
     .right-nav {
         position: absolute;
         right: 0px;
+
     }
+
+
 
     &,
     .modules-group,
@@ -140,8 +161,36 @@ svg {
 
 }
 
+.menu-respon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100% !important;
+}
+
+.lang .dropDown {
+    position: absolute;
+    top: 110%;
+    width: 149px;
+    height: 98px;
+    right: 0;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(8 8 8 / 21%);
+    transition: .5s;
+    animation: lang .2s;
+    z-index: 3;
+}
+
 .lang img {
     width: 40px;
+    cursor: pointer;
+}
+
+.lang .dropDown div:not(:last-child) {
+    border-bottom: 1px solid hsla(0, 0%, 43.1%, .2549019607843137);
 }
 
 img {
@@ -254,4 +303,60 @@ img {
     align-items: center;
     font-family: "Roboto", sans-serif;
 
+}
+
+
+.responsive {
+    height: 100% !important;
+}
+
+
+.custom-md-pd-scale {
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 5px;
+    margin-top: 4%;
+}
+
+.dropDown-component-n {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    min-width: 200px;
+    max-width: 500px;
+    padding: 10px;
+    overflow: hidden;
+    font-size: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(8 8 8 / 21%);
+
+    & div:not(:last-child) {
+        border-bottom: 1px solid hsla(0, 0%, 43.1%, .2549019607843137);
+    }
+}
+
+.component-select {
+    position: relative;
+    color: rgba(8, 12, 15, .9647058823529412);
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.dropDown-component-n div {
+    position: relative;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: #fff;
+        background: #4086f7;
+
+    }
 }

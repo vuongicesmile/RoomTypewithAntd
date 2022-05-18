@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Row, Col, message, Tabs, Table, Tag, Space } from "antd";
+import { Row, Col, message, Tabs, Table, Tag, Space, Switch } from "antd";
 
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import "./Home.scss"
 import logo from "../../images/logo.png";
 import camera from "../../images/camera.svg";
 import List from "../../images/list.js";
-import clear from "../../images/clean.svg";
+import Clean from "../../images/clean.js";
 import manage from "../../images/manage.svg";
 import bacham from "../../images/bacham.svg";
 import bell from "../../images/bell.svg";
@@ -26,56 +26,41 @@ import excel from "../../images/excel.svg";
 import vietnam from "../../images/vietnam.svg";
 import japan from "../../images/Japan.svg";
 import morning from "../../images/morning.svg";
+import deleteIcon from "../../images/delete.svg";
+
 
 
 function Home() {
 
   const { TabPane } = Tabs;
+  // handle when click Dihotel
+  const [CheckDropdownDiHotel, setCheckDropdownDiHotel] = useState(false);
+  // handle when click lang
+  const [CheckDropdownLang, setCheckDropdownLang] = useState(false);
+
   const columns = [
     {
-      title: 'Name',
+      title: 'Room Kind',
       dataIndex: 'name',
       key: 'name',
       render: text => <a>{text}</a>,
     },
     {
-      title: 'Age',
+      title: 'Adult',
       dataIndex: 'age',
       key: 'age',
     },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Tags',
-      key: 'tags',
-      dataIndex: 'tags',
-      render: tags => (
-        <>
-          {tags.map(tag => {
-            let color = tag.length > 5 ? 'geekblue' : 'green';
-            if (tag === 'loser') {
-              color = 'volcano';
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </>
-      ),
-    },
+
     {
       title: 'Action',
       key: 'action',
-      render: (text, record) => (
-        <Space size="middle">
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
-        </Space>
+      render: () => (
+        <button
+          className="undefined buttonList d-flex justify-content-center align-items-center1"
+        >
+          <img src={deleteIcon} alt=""></img>
+          <span className="delete-icon">Delete</span>
+        </button>
       ),
     },
   ];
@@ -104,7 +89,128 @@ function Home() {
     },
   ];
 
+  const columns2 = [
+    {
+      title: 'Room type',
+      dataIndex: 'address',
+      key: 'address',
+      render: text => <a>{text}</a>,
+    },
+    {
+      title: 'Short Name',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Day Use',
+      key: 'shortname',
+      render: () => (
+        <Switch defaultChecked onChange={onChange} />
+      )
+    },
+    {
+      title: 'Group',
+      dataIndex: 'name',
+      key: 'name',
+    },
 
+    {
+      title: 'Action',
+      key: 'action',
+      render: () => (
+        <button
+          className="undefined buttonList d-flex justify-content-center align-items-center1"
+        >
+          <img src={deleteIcon} alt=""></img>
+          <span className="delete-icon">Delete</span>
+        </button>
+      ),
+    },
+  ];
+  const columns3 = [
+    {
+      title: 'Room',
+      dataIndex: 'address',
+      key: 'address',
+      render: text => <a>{text}</a>,
+    },
+    {
+      title: 'Room Kind',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Guest',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: 'Extrabed',
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
+      title: 'Area',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Floor',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Row',
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
+      title: 'Column',
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
+      title: 'Connect',
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
+      title: 'Day Use',
+      key: 'shortname',
+      render: () => (
+        <Switch defaultChecked onChange={onChange} />
+      )
+    },
+
+    {
+      title: 'Owner Room',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Description',
+      dataIndex: 'name',
+      key: 'name',
+    },
+
+    {
+      title: 'Action',
+      key: 'action',
+      render: () => (
+        <button
+          className="undefined buttonList d-flex justify-content-center align-items-center1"
+        >
+          <img src={deleteIcon} alt=""></img>
+          <span className="delete-icon">Delete</span>
+        </button>
+      ),
+    },
+  ];
+
+
+  function onChange(checked) {
+    console.log(`switch to ${checked}`);
+  }
 
   function callback(key) {
     console.log(key);
@@ -125,39 +231,51 @@ function Home() {
         </div>
         <Col span={24} className="module-head-form">
           {/* logo */}
-          <Col  xs={8} sm={5} lg={5} xl={2} xxl={3} className="module-head">
+          <Col xs={8} sm={5} lg={5} xl={2} xxl={3} className="module-head">
             <div className="Logo1 cursor-pointer module-logo">
               <img src={logo} alt=""></img>
             </div>
           </Col>
           <Col className="module-head module-group">
-            <a  href='#'>
-              <img src={camera} alt=""></img>
-              RECEPTION
-            </a>
-            <a className="onSelect" href='#'>
-              <List />
-              RESERVATION
-            </a>
-            <a className="onSelect" href='#'>
-              <img src={clear} alt=""></img>
-              HOUSEKEEPING
-            </a>
-            <a href='#'>
-              <img src={manage} alt=""></img>
-              MANAGE
-            </a>
-            <a href='#'>
-              <img src={setting} alt=""></img>
-              SETTING
-            </a>
+            <Col className='responsive' xs={0} sm={0} md={0} lg={0} xl={4} xxl={4} >
+              <a href='#'>
+                <img src={camera} alt=""></img>
+                RECEPTION
+              </a>
+            </Col>
+            <Col className='responsive' xs={0} sm={0} md={0} lg={0} xl={6} xxl={5} >
+              <a className="onSelect" href='#'>
+                <List />
+                RESERVATION
+              </a>
+            </Col>
+            <Col className='responsive' xs={0} sm={0} md={0} lg={0} xl={6} xxl={5} >
+              <a className="onSelect" href='#'>
+                <Clean />
+                HOUSEKEEPING
+              </a>
+            </Col>
+            <Col className='responsive' xs={0} sm={0} lg={0} md={0} xl={4} xxl={4} >
+              <a href='#'>
+                <img src={manage} alt=""></img>
+                MANAGE
+              </a>
+            </Col>
+            <Col className='responsive' xs={0} sm={0} xl={0} lg={0} md={0} xxl={3} >
+              <a href='#'>
+                <img src={setting} alt=""></img>
+                SETTING
+              </a>
+            </Col>
 
-            <div className="component-select menu-respon">
-              <div className="d-flex align-items-center1">
-                <img src={bacham} alt=""></img>
+            <Col className='responsive' xxl={0}  >
+              <div className="component-select menu-respon">
+                <div className="d-flex align-items-center1">
+                  <img src={bacham} alt=""></img>
+                </div>
+
               </div>
-
-            </div>
+            </Col>
           </Col>
 
           <Col className="module-head right-nav">
@@ -165,17 +283,49 @@ function Home() {
               <img src={bell} alt="" ></img>
             </div>
             <div className="component-select undefined">
-              <div className="d-flex align-items-center1">
-                <div className="userID">
+              <div className="d-flex align-items-center1 custom-md-pd-scale">
+                <div className="userID" onClick={() => setCheckDropdownDiHotel(!CheckDropdownDiHotel)}>
                   <img src={user} alt=""></img>
                   DiHotel
                   <img src={drop} alt=""></img>
                 </div>
               </div>
+
+              {/* handle hide click DiHotel */}
+              {CheckDropdownDiHotel && <div className="dropDown-component-n d-block">
+                <div>Change password</div>
+                <div>Log out</div>
+              </div>}
+              {/* ------------------------------------------ */}
             </div>
             {/* phan xy ly ngon ngu */}
-            <div className="lang lang-moudle">
+            <div className="lang lang-moudle" onClick={() => setCheckDropdownLang(!CheckDropdownLang)}>
               <img src={hoaky} alt=""></img>
+              {CheckDropdownLang &&
+                <div className="dropDown d-block">
+                  <Row
+                    justify="start"
+                    align="middle"
+                    className="border-vietnamese"
+                    id="lang-padding"
+                  >
+                    <img
+                      src="vietnam.svg"
+                      alt=""
+                    />
+                    Vietnamese
+                  </Row>
+                  <Row
+                    justify="start"
+                    align="middle"
+                    className="handle-japan"
+                    id="lang-padding"
+                  >
+                    <img src={japan} alt="" />
+                    <span>Japan</span>
+                  </Row>
+                </div>
+              }
             </div>
 
 
@@ -193,16 +343,49 @@ function Home() {
 
           <Tabs defaultActiveKey="1" onChange={callback} size="large">
             <TabPane tab="Room" key="1">
-              Content of Tab Pane 1
+              <div className="room-kind-container">
+                <Row>
+                  <Col span="24" className="mb-3">
+                    <Row gutter={20}>
+                      <Col><button className='undefined buttonList d-flex justify-content-center align-items-center1'>
+                        <img src={create} alt=""></img>
+                        <span className='add'>Add</span>
+                      </button>
+                      </Col>
+                      <Col>
+                        <button className='undefined buttonList d-flex justify-content-center align-items-center1'>
+                          <img src={excel} alt="" style={{ width: '20px' }}></img>
+                          <span className='add'>Import Excel</span>
+                        </button>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col span="24">
+                    <Table columns={columns3} dataSource={data} />
+                  </Col>
+                </Row>
+              </div>
             </TabPane>
             <TabPane tab="Room Type" key="2">
-              Content of Tab Pane 2
+              <div className="room-kind-container">
+                <Row>
+                  <Col span="24" className="mb-3">
+                    <button className='undefined buttonList d-flex justify-content-center align-items-center1'>
+                      <img src={create} alt=""></img>
+                      <span className='add'>Add</span>
+                    </button>
+                  </Col>
+                  <Col span="24">
+                    <Table columns={columns2} dataSource={data} />
+                  </Col>
+                </Row>
+              </div>
             </TabPane>
             <TabPane tab="Room Kind" key="3">
               <div className="room-kind-container">
                 <Row>
                   <Col span="24" className="mb-3">
-                    <button className='undefined buttonList d-flex justify-content-center align-items-center'>
+                    <button className='undefined buttonList d-flex justify-content-center align-items-center1'>
                       <img src={create} alt=""></img>
                       <span className='add'>Add</span>
                     </button>

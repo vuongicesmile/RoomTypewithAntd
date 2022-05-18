@@ -1,5 +1,6 @@
-// import "./App.css";
+import "./App.css";
 import LoginFix from "./components/LoginFix/LoginFix";
+import Login from "./components/Login/Login.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 
