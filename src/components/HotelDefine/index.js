@@ -42,19 +42,43 @@ function HotelDefine() {
                     className="setting-content-info-row-namehotel d-flex"
                   >
                     <Row gutter={10}>
-                      <Col span={5} className="setting-content-info-row-input">
+                      <Col
+                        xxl={5}
+                        xl={5}
+                        lg={5}
+                        xs={24}
+                        sm={24}
+                        md={24}
+                        className="setting-content-info-row-input"
+                      >
                         <Input
                           size="large"
                           placeholder="large size"
                           prefix={<UserOutlined />}
                         />
                       </Col>
-                      <Col span={5} className="setting-content-info-row-label">
+                      <Col
+                        xxl={5}
+                        xl={5}
+                        lg={5}
+                        xs={24}
+                        sm={24}
+                        md={24}
+                        className="setting-content-info-row-label"
+                      >
                         <label htmlFor="examplehtmlFormControlInput1">
                           Name Hotel
                         </label>
                       </Col>
-                      <Col span={14} className="setting-content-info-row-input">
+                      <Col
+                        xxl={14}
+                        xl={14}
+                        lg={14}
+                        xs={24}
+                        sm={24}
+                        md={24}
+                        className="setting-content-info-row-input"
+                      >
                         <Input
                           size="large"
                           placeholder="large size"
@@ -193,7 +217,7 @@ function HotelDefine() {
               </Row>
             </Col>
             <Col span={24} className="setting-content-price-exctrabed">
-              <Row>
+              <Row gutter={16}>
                 <Col span={3} className="setting-content-price-label d-flex">
                   <label htmlFor="examplehtmlFormControlInput1">
                     exctrabed
@@ -210,7 +234,8 @@ function HotelDefine() {
             </Col>
             <Col span={24} className="setting-content-price--roomnumber">
               <Row>
-                <Col span={3} className="setting-content-price-label d-flex  ">
+                {/* max-height : 40.14 px */}
+                <Col span={3} className="setting-content-price-label d-flex">
                   <label htmlFor="examplehtmlFormControlInput1">
                     Room Number
                   </label>
