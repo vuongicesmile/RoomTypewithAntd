@@ -26,66 +26,54 @@ function HotelDefine() {
           <Row gutter={[8, 32]} className="setting-content-info">
             <Col span={24} className="setting-content-info-row">
               <div className="setting-content-info">
-                <Row>
-                  <Col span={3} className="setting-content-info-row-division">
-                    <Row>
-                      <Col span={24} className="setting-content-info-row-label">
-                        <label htmlFor="examplehtmlFormControlInput1">
-                          Division
-                        </label>
-                      </Col>
-                      {/* padding left : 8px => padding left : 5px !important */}
-                    </Row>
+                <Row gutter={[8, 32]}>
+                  <Col
+                    span={3}
+                    className="setting-content-info-row-division d-flex align-items-center1"
+                  >
+                    <div className="setting-content-info-row-label">
+                      <label htmlFor="examplehtmlFormControlInput1">
+                        Division
+                      </label>
+                    </div>
                   </Col>
                   <Col
-                    span={21}
-                    className="setting-content-info-row-namehotel d-flex"
+                    xs={{ span: 21 }}
+                    sm={{ span: 21 }}
+                    md={{ span: 21 }}
+                    lg={{ span: 8 }}
+                    xl={{ span: 8 }}
+                    xxl={{ span: 8 }}
+                    className="setting-content-info-row-namehotel d-flex align-items-center1"
                   >
-                    <Row gutter={10}>
-                      <Col
-                        xxl={5}
-                        xl={5}
-                        lg={5}
-                        xs={24}
-                        sm={24}
-                        md={24}
-                        className="setting-content-info-row-input"
-                      >
-                        <Input
-                          size="large"
-                          placeholder="large size"
-                          prefix={<UserOutlined />}
-                        />
-                      </Col>
-                      <Col
-                        xxl={5}
-                        xl={5}
-                        lg={5}
-                        xs={24}
-                        sm={24}
-                        md={24}
-                        className="setting-content-info-row-label"
-                      >
-                        <label htmlFor="examplehtmlFormControlInput1">
-                          Name Hotel
-                        </label>
-                      </Col>
-                      <Col
-                        xxl={14}
-                        xl={14}
-                        lg={14}
-                        xs={24}
-                        sm={24}
-                        md={24}
-                        className="setting-content-info-row-input"
-                      >
-                        <Input
-                          size="large"
-                          placeholder="large size"
-                          prefix={<UserOutlined />}
-                        />
-                      </Col>
-                    </Row>
+                    <Input
+                      size="large"
+                      placeholder="large size"
+                      prefix={<UserOutlined />}
+                    />
+                  </Col>
+                  <Col
+                    span={3}
+                    className="setting-content-info-row-label d-flex align-items-center1"
+                  >
+                    <label htmlFor="examplehtmlFormControlInput1">
+                      Name Hotel
+                    </label>
+                  </Col>
+                  <Col
+                    xs={{ span: 21 }}
+                    sm={{ span: 21 }}
+                    md={{ span: 21 }}
+                    lg={{ span: 10 }}
+                    xl={{ span: 10 }}
+                    xxl={{ span: 10 }}
+                    className="setting-content-info-row-input"
+                  >
+                    <Input
+                      size="large"
+                      placeholder="large size"
+                      prefix={<UserOutlined />}
+                    />
                   </Col>
                 </Row>
               </div>
@@ -94,7 +82,7 @@ function HotelDefine() {
               <Row>
                 <Col
                   span={3}
-                  className="setting-content-info-label-address d-flex "
+                  className="setting-content-info-label-address d-flex align-items-center1"
                 >
                   <label htmlFor="examplehtmlFormControlInput1">Address</label>
                 </Col>
@@ -109,7 +97,10 @@ function HotelDefine() {
             </Col>
             <Col span={24} className="setting-content-info-tax">
               <Row>
-                <Col span={3} className="setting--content-info-label  d-flex  ">
+                <Col
+                  span={3}
+                  className="setting--content-info-label  d-flex align-items-center1 "
+                >
                   <label htmlFor="examplehtmlFormControlInput1">Tax</label>
                 </Col>
                 <Col span={21} className="setting-content-info-input">
@@ -123,7 +114,10 @@ function HotelDefine() {
             </Col>
             <Col span={24} className="setting-content-info-phone">
               <Row>
-                <Col span={3} className="setting-content-info-label d-flex  ">
+                <Col
+                  span={3}
+                  className="setting-content-info-label d-flex align-items-center1 "
+                >
                   <label htmlFor="examplehtmlFormControlInput1">Phone</label>
                 </Col>
                 <Col span={21} className="setting-content-info-input">
@@ -137,7 +131,10 @@ function HotelDefine() {
             </Col>
             <Col span={24} className="setting-content-info-fax">
               <Row>
-                <Col span={3} className="setting-content-info-label d-flex  ">
+                <Col
+                  span={3}
+                  className="setting-content-info-label d-flex align-items-center1 "
+                >
                   <label htmlFor="examplehtmlFormControlInput1">Fax</label>
                 </Col>
                 <Col span={21} className="setting-content-info--input">
@@ -151,7 +148,10 @@ function HotelDefine() {
             </Col>
             <Col span={24} className="setting-content-info-fax">
               <Row>
-                <Col span={3} className="setting-content-info-label d-flex  ">
+                <Col
+                  span={3}
+                  className="setting-content-info-label d-flex align-items-center1 "
+                >
                   <label htmlFor="examplehtmlFormControlInput1">Currency</label>
                 </Col>
                 <Col
@@ -185,12 +185,25 @@ function HotelDefine() {
             <Col span={24} className="setting-content-price-label">
               <Row>
                 <Col
-                  span={3}
-                  className="setting-content-price-label-longlb d-flex "
+                  xs={{ span: 4 }}
+                  sm={{ span: 4 }}
+                  md={{ span: 4 }}
+                  lg={{ span: 3 }}
+                  xl={{ span: 3 }}
+                  xxl={{ span: 3 }}
+                  className="setting-content-price-label-longlb d-flex align-items-center1"
                 >
                   <label htmlFor="examplehtmlFormControlInput1">Price</label>
                 </Col>
-                <Col span={21} className="setting-content-price-input">
+                <Col
+                  xs={{ span: 20 }}
+                  sm={{ span: 20 }}
+                  md={{ span: 20 }}
+                  lg={{ span: 21 }}
+                  xl={{ span: 21 }}
+                  xxl={{ span: 21 }}
+                  className="setting-content-price-input"
+                >
                   <Input
                     size="large"
                     placeholder="large size"
@@ -202,12 +215,25 @@ function HotelDefine() {
             <Col span={24} className="setting-content-price-adult-child">
               <Row>
                 <Col
-                  span={3}
-                  className="setting-content-price-label d-flex justify-content-start"
+                  xs={{ span: 4 }}
+                  sm={{ span: 4 }}
+                  md={{ span: 4 }}
+                  lg={{ span: 3 }}
+                  xl={{ span: 3 }}
+                  xxl={{ span: 3 }}
+                  className="setting-content-price-label d-flex justify-content-start align-items-center1"
                 >
                   <label htmlFor="examplehtmlFormControlInput1">Price</label>
                 </Col>
-                <Col span={21} className="setting-content-price-input">
+                <Col
+                  xs={{ span: 20 }}
+                  sm={{ span: 20 }}
+                  md={{ span: 20 }}
+                  lg={{ span: 21 }}
+                  xl={{ span: 21 }}
+                  xxl={{ span: 21 }}
+                  className="setting-content-price-input"
+                >
                   <Input
                     size="large"
                     placeholder="large size"
@@ -218,12 +244,28 @@ function HotelDefine() {
             </Col>
             <Col span={24} className="setting-content-price-exctrabed">
               <Row gutter={16}>
-                <Col span={3} className="setting-content-price-label d-flex">
+                <Col
+                  xs={{ span: 4 }}
+                  sm={{ span: 4 }}
+                  md={{ span: 4 }}
+                  lg={{ span: 3 }}
+                  xl={{ span: 3 }}
+                  xxl={{ span: 3 }}
+                  className="setting-content-price-label d-flex align-items-center1"
+                >
                   <label htmlFor="examplehtmlFormControlInput1">
                     exctrabed
                   </label>
                 </Col>
-                <Col span={21} className="setting-content-price-input">
+                <Col
+                  xs={{ span: 20 }}
+                  sm={{ span: 20 }}
+                  md={{ span: 20 }}
+                  lg={{ span: 21 }}
+                  xl={{ span: 21 }}
+                  xxl={{ span: 21 }}
+                  className="setting-content-price-input"
+                >
                   <Input
                     size="large"
                     placeholder="large size"
@@ -235,12 +277,28 @@ function HotelDefine() {
             <Col span={24} className="setting-content-price--roomnumber">
               <Row>
                 {/* max-height : 40.14 px */}
-                <Col span={3} className="setting-content-price-label d-flex">
+                <Col
+                  xs={{ span: 4 }}
+                  sm={{ span: 4 }}
+                  md={{ span: 4 }}
+                  lg={{ span: 3 }}
+                  xl={{ span: 3 }}
+                  xxl={{ span: 3 }}
+                  className="setting-content-price-label d-flex align-items-center1"
+                >
                   <label htmlFor="examplehtmlFormControlInput1">
                     Room Number
                   </label>
                 </Col>
-                <Col span={21} className="setting-content-price-input">
+                <Col
+                  xs={{ span: 20 }}
+                  sm={{ span: 20 }}
+                  md={{ span: 20 }}
+                  lg={{ span: 21 }}
+                  xl={{ span: 21 }}
+                  xxl={{ span: 21 }}
+                  className="setting-content-price-input"
+                >
                   <Input
                     size="large"
                     placeholder="large size"
@@ -251,10 +309,26 @@ function HotelDefine() {
             </Col>
             <Col span={24} className="setting-content-price-webhotel">
               <Row>
-                <Col span={3} className="setting-content-price-label d-flex">
+                <Col
+                  xs={{ span: 4 }}
+                  sm={{ span: 4 }}
+                  md={{ span: 4 }}
+                  lg={{ span: 3 }}
+                  xl={{ span: 3 }}
+                  xxl={{ span: 3 }}
+                  className="setting-content-price-label d-flex align-items-center1"
+                >
                   <label htmlFor="examplehtmlFormControlInput1">Content</label>
                 </Col>
-                <Col span={21} className="setting-content-price-input">
+                <Col
+                  xs={{ span: 20 }}
+                  sm={{ span: 20 }}
+                  md={{ span: 20 }}
+                  lg={{ span: 21 }}
+                  xl={{ span: 21 }}
+                  xxl={{ span: 21 }}
+                  className="setting-content-price-input"
+                >
                   <Input
                     size="large"
                     placeholder="large size"
